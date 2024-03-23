@@ -1,0 +1,78 @@
+#!/bin/bash
+pfetch
+
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+bind '"\C-r": reverse-search-history'
+bind 'TAB:menu-complete'
+alias proj="cd ~/Projects"
+alias dl="cd ~/Downloads"
+alias docs="cd ~/Documents"
+
+
+# System Configuration
+alias nix-edit="sudo nvim /etc/nixos/configuration.nix"
+alias nix-rebuild="sudo nixos-rebuild switch"
+alias nix-gc="sudo nix-collect-garbage -d"
+
+# Nix Package Management
+alias nix-install="sudo nix-env -i"
+alias nix-uninstall="sudo nix-env -e"
+alias nix-search="nix search"
+
+# System Information
+alias nix-info="nixos-version && uname -a"
+alias nix-processes="sudo nix-store --gc --print-dead"
+alias nix-storage="sudo du -sh /nix/store"
+
+# Nix Profiles
+alias nix-profile-list="nix-env -q"
+alias nix-profile-add="nix-env -i"
+alias nix-profile-remove="nix-env -e"
+
+# NixOS Service Management
+alias nix-service-list="sudo systemctl list-units 'nix*' --all"
+alias nix-service-start="sudo systemctl start"
+alias nix-service-stop="sudo systemctl stop"
+alias nix-service-restart="sudo systemctl restart"
+
+# System Logs
+alias nix-journal="journalctl -u nix*"
+
+
+
+alias nvim-edit='nvim ~/.config/nvim/init.vim'
+alias bash-edit='nvim ~/.bashrc'
+
+
+
+# Git 
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gpull="git pull"
+alias gclone="git clone"
+alias glog="git log"
+alias gdiff="git diff"
+alias gbranch="git branch"
+alias gcheck="git checkout"
+alias gmerge="git merge"
+alias greset="git reset"
+alias gfetch="git fetch"
+alias gtag="git tag"
+alias gshow="git show"
+alias gclean="git clean"
+alias gsub="git submodule"
+alias gsubinit="git submodule init"
+alias gsubupdate="git submodule update"
+alias gsubstatus="git submodule status"
+
+
+# File System Navigation
+alias ll="ls -l"
+alias la="ls -la"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
